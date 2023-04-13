@@ -1,6 +1,5 @@
-const { getBabelOutputPlugin } = require('@rollup/plugin-babel')
+const { getBabelOutputPlugin, babel } = require('@rollup/plugin-babel')
 
-const typescript = require('@rollup/plugin-typescript')
 const replace = require('@rollup/plugin-replace')
 const externals = require('rollup-plugin-node-externals')
 const { nodeResolve } = require('@rollup/plugin-node-resolve')
@@ -15,9 +14,9 @@ module.exports = {
       presets: [['@babel/env', { targets: { node: '8' }, modules: false }]],
     }),
     externals({ builtinsPrefix: 'strip' }),
-    typescript({
-      tsconfig: 'tsconfig.json',
-      outputToFilesystem: false,
+    babel({
+      babelHelpers: 'bundled',
+      extensions: ['.mts', '.ts'],
     }),
     replace({
       'process.env.MINIO_JS_PACKAGE_VERSION': JSON.stringify(pkg.version),
