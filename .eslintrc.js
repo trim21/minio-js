@@ -5,14 +5,13 @@ module.exports = {
     es6: true,
   },
   ignorePatterns: ['src/test/*.*'],
-  overrides: [],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier', // This should be the last entry.
   ],
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'simple-import-sort'],
+  plugins: ['@typescript-eslint', 'simple-import-sort', 'unused-imports', 'import'],
   parserOptions: {
     sourceType: 'module',
     ecmaVersion: 8,
@@ -54,6 +53,17 @@ module.exports = {
         },
       },
     ],
+
+    'unused-imports/no-unused-imports': 'error',
+
+    '@typescript-eslint/consistent-type-imports': [
+      'error',
+      {
+        prefer: 'type-imports',
+        fixStyle: 'separate-type-imports',
+      },
+    ],
+
     '@typescript-eslint/no-explicit-any': ['warn'],
 
     '@typescript-eslint/prefer-optional-chain': 0, // ["warn"],
@@ -67,5 +77,20 @@ module.exports = {
 
     'no-extra-parens': 0,
     '@typescript-eslint/no-extra-parens': 0,
+    'import/extensions': ['error', 'always'],
+  },
+  settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.mts', '.js', '.mjs'],
+    },
+    'import/resolver': {
+      typescript: {
+        extensionAlias: {
+          '.js': '.ts',
+        },
+        extensions: ['.ts', '.mts', '.js', '.mjs'],
+        enforceExtension: true,
+      },
+    },
   },
 }

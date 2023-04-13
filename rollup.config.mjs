@@ -1,12 +1,14 @@
-const { getBabelOutputPlugin, babel } = require('@rollup/plugin-babel')
+import * as fs from 'node:fs'
 
-const replace = require('@rollup/plugin-replace')
-const externals = require('rollup-plugin-node-externals')
-const { nodeResolve } = require('@rollup/plugin-node-resolve')
+import { babel, getBabelOutputPlugin } from '@rollup/plugin-babel'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
+import replace from '@rollup/plugin-replace'
+import externals from 'rollup-plugin-node-externals'
+import execute from 'rollup-plugin-shell'
 
-const pkg = require('./package.json')
+const pkg = JSON.parse(fs.readFileSync('package.json').toString())
 
-module.exports = {
+export default {
   input: pkg.source,
   plugins: [
     nodeResolve({ extensions: ['.mjs', '.js', '.ts', '.mts', '.json', '.node'] }),
@@ -22,6 +24,7 @@ module.exports = {
       'process.env.MINIO_JS_PACKAGE_VERSION': JSON.stringify(pkg.version),
       preventAssignment: true,
     }),
+    execute({ commands: ['npm run tsc'], hook: 'buildEnd' }),
   ],
   output: [
     // ES module (for bundlers) build.
