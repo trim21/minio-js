@@ -30,8 +30,8 @@ import {
   makeDateLong,
   makeDateShort,
   partsRequired,
-} from '../../main/helpers'
-import * as Minio from '../../main/minio'
+} from '../../main/helpers.mjs'
+import * as Minio from '../../main/minio.mjs'
 
 const Package = { version: 'development' }
 

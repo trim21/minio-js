@@ -1,8 +1,8 @@
 // imported from https://github.com/DefinitelyTyped/DefinitelyTyped/blob/93cfb0ec069731dcdfc31464788613f7cddb8192/types/minio/index.d.ts
 
 import { EventEmitter } from 'events'
-import { RequestOptions } from 'https'
-import { Readable as ReadableStream } from 'stream'
+import type { RequestOptions } from 'https'
+import type { Readable as ReadableStream } from 'stream'
 
 // Exports only from typings
 export type Region =

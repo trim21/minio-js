@@ -28,9 +28,9 @@ import { TextEncoder } from 'web-encoding'
 import Xml from 'xml'
 import xml2js from 'xml2js'
 
-import CredentialProvider from './CredentialProvider'
-import * as errors from './errors'
-import extensions from './extensions'
+import CredentialProvider from './CredentialProvider.mjs'
+import * as errors from './errors.mts'
+import extensions from './extensions.mjs'
 import {
   calculateEvenSplits,
   CopyDestinationOptions,
@@ -71,16 +71,16 @@ import {
   toSha256,
   uriEscape,
   uriResourceEscape,
-} from './helpers'
-import { NotificationConfig, NotificationPoller } from './notification'
-import ObjectUploader from './object-uploader'
-import { getS3Endpoint } from './s3-endpoints'
-import { postPresignSignatureV4, presignSignatureV4, signV4 } from './signing'
-import * as transformers from './transformers'
-import { parseSelectObjectContentResponse } from './xml-parsers'
+} from './helpers.mjs'
+import { NotificationConfig, NotificationPoller } from './notification.mjs'
+import ObjectUploader from './object-uploader.mjs'
+import { getS3Endpoint } from './s3-endpoints.mjs'
+import { postPresignSignatureV4, presignSignatureV4, signV4 } from './signing.mjs'
+import * as transformers from './transformers.mjs'
+import { parseSelectObjectContentResponse } from './xml-parsers.mjs'
 
-export * from './helpers'
-export * from './notification'
+export * from './helpers.mjs'
+export * from './notification.mjs'
 
 // will be replaced by rollup plugin
 const version = process.env.MINIO_JS_PACKAGE_VERSION || 'development'

@@ -29,7 +29,7 @@ import superagent from 'superagent'
 import url from 'url'
 import * as uuid from 'uuid'
 
-import AssumeRoleProvider from '../../main/AssumeRoleProvider'
+import AssumeRoleProvider from '../../main/AssumeRoleProvider.mjs'
 import {
   CopyDestinationOptions,
   CopySourceOptions,
@@ -37,8 +37,8 @@ import {
   getVersionId,
   isArray,
   removeDirAndFiles,
-} from '../../main/helpers'
-import * as minio from '../../main/minio'
+} from '../../main/helpers.mjs'
+import * as minio from '../../main/minio.mjs'
 
 const assert = chai.assert
 
