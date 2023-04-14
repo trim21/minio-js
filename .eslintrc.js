@@ -35,6 +35,10 @@ module.exports = {
     },
   },
   rules: {
+    curly: ['error'],
+    // import node stdlib as `node:...`
+    // don't worry, babel will remove these prefix.
+    'unicorn/prefer-node-protocol': 'error',
     'simple-import-sort/imports': 'error',
   },
   overrides: [
@@ -43,9 +47,6 @@ module.exports = {
       excludedFiles: ['src/test/*.*'],
       rules: {
         'no-console': ['error'],
-        // "no-var": ["error"],
-        'comma-dangle': 0,
-        curly: ['error'],
         'prefer-const': 0,
         'no-template-curly-in-string': 'error',
         // "quotes": ["error", "double"],
@@ -78,9 +79,6 @@ module.exports = {
         ],
 
         'unused-imports/no-unused-imports': 'error',
-        // import node stdlib as `node:...`
-        // don't worry, rollup will remove these prefix when building
-        'unicorn/prefer-node-protocol': 'error',
         '@typescript-eslint/consistent-type-imports': [
           'error',
           {
