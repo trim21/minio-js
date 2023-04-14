@@ -24,6 +24,8 @@ export default {
       'process.env.MINIO_JS_PACKAGE_VERSION': JSON.stringify(pkg.version),
       preventAssignment: true,
     }),
+    // babel doesn't perform type checking
+    // also emit type definition
     execute({ commands: ['npm run tsc'], hook: 'buildEnd' }),
   ],
   output: [
