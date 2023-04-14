@@ -14,10 +14,6 @@
  * limitations under the License.
  */
 
-import * as fs from 'node:fs'
-
-export { fs }
-
 class ExtendableError extends Error {
   // es6 doesn't support new error cause
   // and nodejs runtime will add stack automatically, so no need to add it.
