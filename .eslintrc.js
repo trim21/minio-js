@@ -11,7 +11,7 @@ module.exports = {
     'prettier', // This should be the last entry.
   ],
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'simple-import-sort', 'unused-imports', 'import'],
+  plugins: ['@typescript-eslint', 'simple-import-sort', 'unused-imports', 'import', 'unicorn'],
   parserOptions: {
     sourceType: 'module',
     ecmaVersion: 8,
@@ -55,7 +55,9 @@ module.exports = {
     ],
 
     'unused-imports/no-unused-imports': 'error',
-
+    // import node stdlib as `node:...`
+    // don't worry, rollup will remove these prefix when building
+    'unicorn/prefer-node-protocol': 'error',
     '@typescript-eslint/consistent-type-imports': [
       'error',
       {

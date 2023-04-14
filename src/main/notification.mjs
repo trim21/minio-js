@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { EventEmitter } from 'events'
+import { EventEmitter } from 'node:events'
 
 import { DEFAULT_REGION, pipesetup, uriEscape } from './helpers.mjs'
 import * as transformers from './transformers.mjs'

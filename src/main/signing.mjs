@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-import Crypto from 'crypto'
+import Crypto from 'node:crypto'
+
 import _ from 'lodash'
 
 import * as errors from './errors.mts'

@@ -14,16 +14,17 @@
  * limitations under the License.
  */
 
+import * as crypto from 'node:crypto'
+import fs from 'node:fs'
+import path from 'node:path'
+import stream from 'node:stream'
+
 import { isBrowser } from 'browser-or-node'
-import * as crypto from 'crypto'
 import { XMLParser } from 'fast-xml-parser'
-import fs from 'fs'
 import ipaddr from 'ipaddr.js'
 import _ from 'lodash'
 import mime from 'mime-types'
-import path from 'path'
 import querystring from 'query-string'
-import stream from 'stream'
 
 import * as errors from './errors.mts'
 

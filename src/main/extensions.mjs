@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import Stream from 'stream'
+import Stream from 'node:stream'
 
 import * as errors from './errors.mts'
 import { isBoolean, isNumber, isString, isValidBucketName, isValidPrefix, pipesetup, uriEscape } from './helpers.mjs'

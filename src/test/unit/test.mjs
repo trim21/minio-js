@@ -16,9 +16,10 @@
 
 // require("source-map-support").install()
 
+import Stream from 'node:stream'
+
 import { assert } from 'chai'
 import Nock from 'nock'
-import Stream from 'stream'
 
 import {
   calculateEvenSplits,

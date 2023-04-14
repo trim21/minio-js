@@ -14,19 +14,20 @@
  * limitations under the License.
  */
 
+import crypto from 'node:crypto'
+import fs from 'node:fs'
+import http from 'node:http'
+import https from 'node:https'
+import os from 'node:os'
+import stream from 'node:stream'
+import url from 'node:url'
+
 import async from 'async'
 import chai from 'chai'
-import crypto from 'crypto'
-import fs from 'fs'
-import http from 'http'
-import https from 'https'
 import _ from 'lodash'
 import { step } from 'mocha-steps'
-import os from 'os'
 import splitFile from 'split-file'
-import stream from 'stream'
 import superagent from 'superagent'
-import url from 'url'
 import * as uuid from 'uuid'
 
 import AssumeRoleProvider from '../../main/AssumeRoleProvider.mjs'

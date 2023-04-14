@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-import Crypto from 'crypto'
+import Crypto from 'node:crypto'
+import { Transform } from 'node:stream'
+
 import * as querystring from 'query-string'
-import { Transform } from 'stream'
 
 import { getVersionId, sanitizeETag } from './helpers.mjs'
 

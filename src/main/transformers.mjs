@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-import Crypto from 'crypto'
+import Crypto from 'node:crypto'
+
 import JSONParser from 'json-stream'
 import _ from 'lodash'
 import Through2 from 'through2'

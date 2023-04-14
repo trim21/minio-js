@@ -14,16 +14,17 @@
  * limitations under the License.
  */
 
+import fs from 'node:fs'
+import Http from 'node:http'
+import Https from 'node:https'
+import path from 'node:path'
+import Stream from 'node:stream'
+
 import async from 'async'
 import BlockStream2 from 'block-stream2'
-import fs from 'fs'
-import Http from 'http'
-import Https from 'https'
 import _ from 'lodash'
 import mkdirp from 'mkdirp'
-import path from 'path'
 import querystring from 'query-string'
-import Stream from 'stream'
 import { TextEncoder } from 'web-encoding'
 import Xml from 'xml'
 import xml2js from 'xml2js'

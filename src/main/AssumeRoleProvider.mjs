@@ -1,6 +1,6 @@
-import Http from 'http'
-import Https from 'https'
-import { URL, URLSearchParams } from 'url'
+import Http from 'node:http'
+import Https from 'node:https'
+import { URL, URLSearchParams } from 'node:url'
 
 import CredentialProvider from './CredentialProvider.mjs'
 import Credentials from './Credentials.mjs'
