@@ -14,7 +14,7 @@ module.exports = {
   plugins: ['@typescript-eslint', 'simple-import-sort', 'unused-imports', 'import', 'unicorn'],
   parserOptions: {
     sourceType: 'module',
-    ecmaVersion: 8,
+    ecmaVersion: 2022,
   },
   rules: {
     'no-console': ['error'],
@@ -83,16 +83,27 @@ module.exports = {
   },
   settings: {
     'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.mts', '.js', '.mjs'],
+      '@typescript-eslint/parser': ['.ts'],
     },
     'import/resolver': {
       typescript: {
+        alwaysTryTypes: false,
         extensionAlias: {
-          '.js': '.ts',
+          '.js': ['.js'],
         },
-        extensions: ['.ts', '.mts', '.js', '.mjs'],
+        extensions: ['.ts', '.js', '.mjs'],
+        fullySpecified: true,
         enforceExtension: true,
       },
     },
   },
+  overrides: [
+    {
+      files: './src/**/*',
+      rules: {
+        'import/no-commonjs': 'error',
+        'import/no-amd': 'error',
+      },
+    },
+  ],
 }

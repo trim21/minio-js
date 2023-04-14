@@ -12,8 +12,8 @@
     "prebuild": "rimraf ./dist/",
     "build": "rollup -c rollup.config.mjs",
     "test": "mocha",
-    "lint": "eslint --ext js,mjs,cjs,ts,mts,cts ./src/",
-    "lint-fix": " eslint --ext js,mjs,cjs,ts,mts,cts ./src/ --fix",
+    "lint": "eslint --ext js,mjs,cjs,ts,mts,cts ./src/**/*",
+    "lint-fix": "eslint --ext js,mjs,cjs,ts,mts,cts ./src/ --fix",
     "prepublishOnly": "npm test",
     "functional": "mocha src/test/functional/functional-tests.js",
     "tsc": "tsc",
@@ -44,10 +44,10 @@
     "semi": false
   },
   "lint-staged": {
-    "*.{js,cjs,mjs,ts,cts,mts,json}": [
+    "*.{js,cjs,mjs,ts,json}": [
       "prettier --write"
     ],
-    "src/**/*.{js,cjs,mjs,ts,cts,mts}": [
+    "src/**/*.{js,cjs,mjs,ts}": [
       "eslint --fix",
       "prettier --write"
     ]
