@@ -3,6 +3,4 @@
 
 npm run lint-staged
 
-npm run tsc --noEmit
-
 npm run build
