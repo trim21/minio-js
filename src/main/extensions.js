@@ -20,9 +20,11 @@ import * as errors from './errors.ts'
 import { isBoolean, isNumber, isString, isValidBucketName, isValidPrefix, pipesetup, uriEscape } from './helpers.js'
 import * as transformers from './transformers.js'
 
-// for esm
 export { extensions }
-export default class extensions {
+// backward compatibility.
+export default extensions
+
+class extensions {
   constructor(client) {
     this.client = client
   }

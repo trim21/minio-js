@@ -1,3 +1,7 @@
+export { Credentials }
+// backward compatibility.
+export default Credentials
+
 class Credentials {
   constructor({ accessKey, secretKey, sessionToken }) {
     this.accessKey = accessKey
@@ -37,7 +41,3 @@ class Credentials {
     }
   }
 }
-
-export default Credentials
-// for esm
-export { Credentials }

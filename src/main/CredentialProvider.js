@@ -1,4 +1,8 @@
-import Credentials from './Credentials.js'
+import { Credentials } from './Credentials.js'
+
+export { CredentialProvider }
+// for backward compatibility.
+export default CredentialProvider
 
 class CredentialProvider {
   constructor({ accessKey, secretKey, sessionToken }) {
@@ -45,7 +49,3 @@ class CredentialProvider {
     return this.credentials.getSessionToken()
   }
 }
-
-export default CredentialProvider
-// for esm
-export { CredentialProvider }

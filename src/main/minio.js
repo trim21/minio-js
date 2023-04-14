@@ -29,7 +29,7 @@ import { TextEncoder } from 'web-encoding'
 import Xml from 'xml'
 import xml2js from 'xml2js'
 
-import CredentialProvider from './CredentialProvider.js'
+import { CredentialProvider } from './CredentialProvider.js'
 import * as errors from './errors.ts'
 import extensions from './extensions.js'
 import {
@@ -74,7 +74,7 @@ import {
   uriResourceEscape,
 } from './helpers.js'
 import { NotificationConfig, NotificationPoller } from './notification.js'
-import ObjectUploader from './object-uploader.js'
+import { ObjectUploader } from './object-uploader.js'
 import { getS3Endpoint } from './s3-endpoints.js'
 import { postPresignSignatureV4, presignSignatureV4, signV4 } from './signing.js'
 import * as transformers from './transformers.js'

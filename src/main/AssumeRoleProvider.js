@@ -2,10 +2,14 @@ import * as Http from 'node:http'
 import * as Https from 'node:https'
 import { URL, URLSearchParams } from 'node:url'
 
-import CredentialProvider from './CredentialProvider.js'
-import Credentials from './Credentials.js'
+import { CredentialProvider } from './CredentialProvider.js'
+import { Credentials } from './Credentials.js'
 import { makeDateLong, parseXml, toSha256 } from './helpers.js'
 import { signV4ByServiceName } from './signing.js'
+
+export { AssumeRoleProvider }
+// backward compatibility
+export default AssumeRoleProvider
 
 class AssumeRoleProvider extends CredentialProvider {
   constructor({
@@ -208,7 +212,3 @@ class AssumeRoleProvider extends CredentialProvider {
     return isAboutToExpire
   }
 }
-
-export default AssumeRoleProvider
-// for esm
-export { AssumeRoleProvider }
