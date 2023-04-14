@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import Stream from 'node:stream'
+import * as Stream from 'node:stream'
 
 import * as errors from './errors.ts'
 import { isBoolean, isNumber, isString, isValidBucketName, isValidPrefix, pipesetup, uriEscape } from './helpers.js'

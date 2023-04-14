@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-import fs from 'node:fs'
-import Http from 'node:http'
-import Https from 'node:https'
-import path from 'node:path'
-import Stream from 'node:stream'
+import * as fs from 'node:fs'
+import * as Http from 'node:http'
+import * as Https from 'node:https'
+import * as path from 'node:path'
+import * as Stream from 'node:stream'
 
 import async from 'async'
 import BlockStream2 from 'block-stream2'

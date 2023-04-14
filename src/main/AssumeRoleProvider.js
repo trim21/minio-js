@@ -1,5 +1,5 @@
-import Http from 'node:http'
-import Https from 'node:https'
+import * as Http from 'node:http'
+import * as Https from 'node:https'
 import { URL, URLSearchParams } from 'node:url'
 
 import CredentialProvider from './CredentialProvider.js'

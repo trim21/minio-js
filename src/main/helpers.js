@@ -15,9 +15,9 @@
  */
 
 import * as crypto from 'node:crypto'
-import fs from 'node:fs'
-import path from 'node:path'
-import stream from 'node:stream'
+import * as fs from 'node:fs'
+import * as path from 'node:path'
+import * as stream from 'node:stream'
 
 import { isBrowser } from 'browser-or-node'
 import { XMLParser } from 'fast-xml-parser'

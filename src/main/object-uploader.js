@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import Crypto from 'node:crypto'
+import * as Crypto from 'node:crypto'
 import { Transform } from 'node:stream'
 
 import * as querystring from 'query-string'
