@@ -4,7 +4,6 @@
   "description": "S3 Compatible Cloud Storage client",
   "source": "./src/main/minio.js",
   "main": "./dist/main/minio.js",
-  "module": "./dist/esm/minio.mjs",
   "types": "./src/main/minio.d.ts",
   "scripts": {
     "format": "prettier -w .",
@@ -19,21 +18,6 @@
     "tsc": "tsc",
     "lint-staged": "lint-staged",
     "prepare": "husky install"
-  },
-  "exports": {
-    ".": {
-      "require": "./dist/main/minio.js",
-      "default": "./dist/esm/minio.mjs"
-    },
-    "./dist/main/*": {
-      "require": "./dist/main/*",
-      "import": null
-    },
-    "./dist/esm/*": {
-      "import": "./dist/esm/*",
-      "require": null
-    },
-    "./package.json": "./package.json"
   },
   "files": [
     "package.json",

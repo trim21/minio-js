@@ -49,7 +49,9 @@ const outMap = { cjs: 'main', esm: 'esm' }
 
 async function buildFiles({ files, module, outDir }) {
   console.log(`building for ${module}`)
-  execSync(`npx tsc --outDir ./dist/${outMap[module]}/`)
+  if (module === 'cjs') {
+    execSync(`npx tsc --outDir ./dist/${outMap[module]}/`)
+  }
   const opt = options(module)
   for (const file of files) {
     if (file.path.endsWith('.d.ts')) {
