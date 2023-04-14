@@ -6,6 +6,9 @@ const buildConfig = {
 const inTest = process.env.NODE_ENV === 'test'
 
 const testConfig = {
+  plugins: [
+    '@upleveled/remove-node-prefix', // lower version of node (<14) doesn't support require('node:fs')
+  ],
   presets: [
     ['@babel/preset-typescript', { allExtensions: true }],
     ['@babel/preset-env', { targets: { node: 'current' }, modules: 'cjs' }],
