@@ -6,6 +6,7 @@ import { promisify } from 'node:util'
 
 import * as babel from '@babel/core'
 import mkdirp from 'mkdirp'
+import { execSync } from 'child_process'
 
 const mkdir = promisify(mkdirp)
 const pkg = JSON.parse(fs.readFileSync('package.json').toString())
@@ -44,9 +45,11 @@ function options(module) {
 }
 
 const extMap = { cjs: '.js', esm: '.mjs' }
+const outMap = { cjs: 'main', esm: 'esm' }
 
 async function buildFiles({ files, module, outDir }) {
   console.log(`building for ${module}`)
+  execSync(`npx tsc --outDir ./dist/${outMap[module]}/`)
   const opt = options(module)
   for (const file of files) {
     if (file.path.endsWith('.d.ts')) {
