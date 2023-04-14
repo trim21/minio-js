@@ -21,12 +21,8 @@ import * as querystring from 'query-string'
 
 import { getVersionId, sanitizeETag } from './helpers.js'
 
-export { ObjectUploader }
-// backward compatibility.
-export default ObjectUploader
-
 // We extend Transform because Writable does not implement ._flush().
-class ObjectUploader extends Transform {
+export class ObjectUploader extends Transform {
   constructor(client, bucketName, objectName, partSize, metaData, callback) {
     super()
     this.emptyStream = true
@@ -286,3 +282,6 @@ class ObjectUploader extends Transform {
     })
   }
 }
+
+// deprecated, keep for backward compatibility.
+export default ObjectUploader

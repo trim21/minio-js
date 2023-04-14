@@ -20,11 +20,7 @@ import * as errors from './errors.ts'
 import { isBoolean, isNumber, isString, isValidBucketName, isValidPrefix, pipesetup, uriEscape } from './helpers.js'
 import * as transformers from './transformers.js'
 
-export { extensions }
-// backward compatibility.
-export default extensions
-
-class extensions {
+export class extensions {
   constructor(client) {
     this.client = client
   }
@@ -174,3 +170,6 @@ class extensions {
     return transformer
   }
 }
+
+// deprecated, keep for backward compatibility.
+export default extensions

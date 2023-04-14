@@ -1,3 +1,5 @@
+// noinspection JSFileReferences
+
 /*
  * MinIO Javascript Library for Amazon S3 Compatible Cloud Storage, (C) 2015 MinIO, Inc.
  *
