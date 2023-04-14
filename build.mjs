@@ -56,16 +56,19 @@ async function buildFiles({ files, module, outDir }) {
       continue
     }
 
-    console.log(`building ${file.path}`)
+    try {
+      const result = await babel.transformAsync(fs.readFileSync(file.path).toString(), {
+        filename: file.path,
+        ...opt,
+      })
 
-    const result = await babel.transformAsync(fs.readFileSync(file.path).toString(), {
-      filename: file.path,
-      ...opt,
-    })
-
-    const outPath = path.join(outDir, path.relative('src/main/', file.path)).replace(/\.[tj]s/g, extMap[module])
-    await mkdir(path.dirname(outPath))
-    fs.writeFileSync(outPath, result.code)
+      const outPath = path.join(outDir, path.relative('src/main/', file.path)).replace(/\.[tj]s/g, extMap[module])
+      await mkdir(path.dirname(outPath))
+      fs.writeFileSync(outPath, result.code)
+    } catch (e) {
+      console.error(`failed to transpile ${file.path}`)
+      throw e
+    }
   }
 }
 
