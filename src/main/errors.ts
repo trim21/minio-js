@@ -14,7 +14,15 @@
  * limitations under the License.
  */
 
-import ExtendableError from 'es6-error'
+class ExtendableError extends Error {
+  // es6 doesn't support new error cause
+  // and nodejs runtime will add stack automatically, so no need to add it.
+  constructor(message?: string, opt?: ErrorOptions) {
+    super(message, opt)
+    // set error name, otherwise it's always 'Error'
+    this.name = this.constructor.name
+  }
+}
 
 // AnonymousRequestError is generated for anonymous keys on specific
 // APIs. NOTE: PresignedURL generation always requires access keys.

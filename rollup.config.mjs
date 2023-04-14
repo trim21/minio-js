@@ -13,7 +13,7 @@ export default {
   plugins: [
     nodeResolve({ extensions: ['.mjs', '.js', '.ts', '.mts', '.json', '.node'] }),
     getBabelOutputPlugin({
-      presets: [['@babel/env', { targets: { node: '9' }, modules: false }]],
+      presets: [['@babel/env', { targets: { node: '8' }, modules: false }]],
     }),
     externals({ builtinsPrefix: 'strip' }),
     babel({
