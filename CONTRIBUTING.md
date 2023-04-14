@@ -27,4 +27,5 @@ We are currently migrating from JavaScript to TypeScript, so **All Source should
 
 That means only use nodejs `require` in js config file like `.eslintrc.js`
 
-And file import path should match the real file location, which means you should write `import * from "errors.ts"` for `errors.ts` file, do not write `import "errors.js"`
+You should always add import path extension, and file import path should match the real file location,
+which means you should write `import * from "errors.ts"` for `errors.ts` file, do not write `import "errors.js"` for `errors.ts`
