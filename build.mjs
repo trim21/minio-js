@@ -1,12 +1,12 @@
+import { execSync } from 'node:child_process'
 import * as fs from 'node:fs'
 import * as fsp from 'node:fs/promises'
 import * as path from 'node:path'
-import * as fsWalk from '@nodelib/fs.walk'
 import { promisify } from 'node:util'
 
 import * as babel from '@babel/core'
+import * as fsWalk from '@nodelib/fs.walk'
 import mkdirp from 'mkdirp'
-import { execSync } from 'child_process'
 
 const mkdir = promisify(mkdirp)
 const pkg = JSON.parse(fs.readFileSync('package.json').toString())

@@ -15,6 +15,7 @@ module.exports = {
     sourceType: 'module',
     ecmaVersion: 2022,
   },
+  ignorePatterns: ['examples/**/*', 'dist/**/*'],
   settings: {
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts'],
@@ -32,6 +33,9 @@ module.exports = {
         enforceExtension: true,
       },
     },
+  },
+  rules: {
+    'simple-import-sort/imports': 'error',
   },
   overrides: [
     {
@@ -53,8 +57,6 @@ module.exports = {
         'template-curly-spacing': 0, // ["error", "never"],
         'rest-spread-spacing': 0, // ["error", "never"],
         'no-multi-spaces': 0, // ["warn", { ignoreEOLComments: false }],
-
-        'simple-import-sort/imports': 'error',
         'simple-import-sort/exports': 'error',
         indent: 'off',
         'linebreak-style': ['error', 'unix'],
