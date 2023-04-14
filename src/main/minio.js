@@ -83,9 +83,8 @@ import { parseSelectObjectContentResponse } from './xml-parsers.js'
 export * from './helpers.js'
 export * from './notification.js'
 
-// will be replaced by rollup plugin
-const version = process.env.MINIO_JS_PACKAGE_VERSION || 'development'
-const Package = { version }
+// will be replaced by bundler
+const Package = { version: process.env.MINIO_JS_PACKAGE_VERSION || 'development' }
 
 export class Client {
   constructor(params) {
