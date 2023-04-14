@@ -3,7 +3,7 @@
   "version": "7.0.34",
   "description": "S3 Compatible Cloud Storage client",
   "source": "./src/main/minio.js",
-  "main": "./dist/cjs/minio.cjs",
+  "main": "./dist/main/minio.js",
   "module": "./dist/esm/minio.mjs",
   "types": "./src/main/minio.d.ts",
   "scripts": {
@@ -22,11 +22,16 @@
   },
   "exports": {
     ".": {
-      "require": "./dist/main/minio.cjs",
+      "require": "./dist/main/minio.js",
       "default": "./dist/esm/minio.mjs"
     },
     "./dist/main/*": {
-      "require": "./dist/main/*"
+      "require": "./dist/main/*",
+      "import": null
+    },
+    "./dist/esm/*": {
+      "import": "./dist/esm/*",
+      "require": null
     },
     "./package.json": "./package.json"
   },
