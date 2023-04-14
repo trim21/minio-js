@@ -85,6 +85,8 @@ module.exports = {
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts'],
     },
+    // we need to config this so import are fully specified
+    // otherwise @babel/register can't handle TypeScript files
     'import/resolver': {
       typescript: {
         alwaysTryTypes: false,
