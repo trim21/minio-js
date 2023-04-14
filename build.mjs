@@ -55,6 +55,7 @@ async function buildFiles({ files, module, outDir }) {
   const opt = options(module)
   for (const file of files) {
     if (file.path.endsWith('.d.ts')) {
+      fs.copyFileSync(file.path, path.join(outDir, path.relative('src/main/', file.path)))
       continue
     }
 

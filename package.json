@@ -4,7 +4,7 @@
   "description": "S3 Compatible Cloud Storage client",
   "source": "./src/main/minio.js",
   "main": "./dist/main/minio.js",
-  "types": "./src/main/minio.d.ts",
+  "types": "./dist/main/minio.d.ts",
   "scripts": {
     "format": "prettier -w .",
     "format-check": "prettier --list-different .",
