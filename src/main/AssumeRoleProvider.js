@@ -210,3 +210,5 @@ class AssumeRoleProvider extends CredentialProvider {
 }
 
 export default AssumeRoleProvider
+// for esm
+export { AssumeRoleProvider }

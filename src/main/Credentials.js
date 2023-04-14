@@ -8,18 +8,23 @@ class Credentials {
   setAccessKey(accessKey) {
     this.accessKey = accessKey
   }
+
   getAccessKey() {
     return this.accessKey
   }
+
   setSecretKey(secretKey) {
     this.secretKey = secretKey
   }
+
   getSecretKey() {
     return this.secretKey
   }
+
   setSessionToken(sessionToken) {
     this.sessionToken = sessionToken
   }
+
   getSessionToken() {
     return this.sessionToken
   }
@@ -34,3 +39,5 @@ class Credentials {
 }
 
 export default Credentials
+// for esm
+export { Credentials }

@@ -47,3 +47,5 @@ class CredentialProvider {
 }
 
 export default CredentialProvider
+// for esm
+export { CredentialProvider }
