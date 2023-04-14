@@ -4,4 +4,13 @@
 
 const register = require('@babel/register')
 
-register({ extensions: ['.ts', '.js'] })
+register({
+  extensions: ['.ts', '.js'],
+  plugins: [
+    '@upleveled/remove-node-prefix', // lower version of node (<14) doesn't support require('node:fs')
+  ],
+  presets: [
+    ['@babel/preset-typescript', { allExtensions: true }],
+    ['@babel/preset-env', { targets: { node: 'current' }, modules: 'cjs' }],
+  ],
+})
