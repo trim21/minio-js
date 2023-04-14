@@ -30,7 +30,7 @@ import splitFile from 'split-file'
 import superagent from 'superagent'
 import * as uuid from 'uuid'
 
-import AssumeRoleProvider from '../../main/AssumeRoleProvider.mjs'
+import AssumeRoleProvider from '../../main/AssumeRoleProvider.js'
 import {
   CopyDestinationOptions,
   CopySourceOptions,
@@ -38,8 +38,8 @@ import {
   getVersionId,
   isArray,
   removeDirAndFiles,
-} from '../../main/helpers.mjs'
-import * as minio from '../../main/minio.mjs'
+} from '../../main/helpers.js'
+import * as minio from '../../main/minio.js'
 
 const assert = chai.assert
 

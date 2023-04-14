@@ -2,10 +2,10 @@ import Http from 'node:http'
 import Https from 'node:https'
 import { URL, URLSearchParams } from 'node:url'
 
-import CredentialProvider from './CredentialProvider.mjs'
-import Credentials from './Credentials.mjs'
-import { makeDateLong, parseXml, toSha256 } from './helpers.mjs'
-import { signV4ByServiceName } from './signing.mjs'
+import CredentialProvider from './CredentialProvider.js'
+import Credentials from './Credentials.js'
+import { makeDateLong, parseXml, toSha256 } from './helpers.js'
+import { signV4ByServiceName } from './signing.js'
 
 class AssumeRoleProvider extends CredentialProvider {
   constructor({

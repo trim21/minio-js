@@ -26,7 +26,7 @@ import _ from 'lodash'
 import mime from 'mime-types'
 import querystring from 'query-string'
 
-import * as errors from './errors.mts'
+import * as errors from './errors.ts'
 
 const fxp = new XMLParser()
 

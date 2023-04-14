@@ -16,8 +16,8 @@
 
 import { EventEmitter } from 'node:events'
 
-import { DEFAULT_REGION, pipesetup, uriEscape } from './helpers.mjs'
-import * as transformers from './transformers.mjs'
+import { DEFAULT_REGION, pipesetup, uriEscape } from './helpers.js'
+import * as transformers from './transformers.js'
 
 // Notification config - array of target configs.
 // Target configs can be

@@ -16,9 +16,9 @@
 
 import Stream from 'node:stream'
 
-import * as errors from './errors.mts'
-import { isBoolean, isNumber, isString, isValidBucketName, isValidPrefix, pipesetup, uriEscape } from './helpers.mjs'
-import * as transformers from './transformers.mjs'
+import * as errors from './errors.ts'
+import { isBoolean, isNumber, isString, isValidBucketName, isValidPrefix, pipesetup, uriEscape } from './helpers.js'
+import * as transformers from './transformers.js'
 
 export default class extensions {
   constructor(client) {

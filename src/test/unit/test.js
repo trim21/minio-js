@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-// require("source-map-support").install()
-
 import Stream from 'node:stream'
 
 import { assert } from 'chai'
@@ -31,8 +29,8 @@ import {
   makeDateLong,
   makeDateShort,
   partsRequired,
-} from '../../main/helpers.mjs'
-import * as Minio from '../../main/minio.mjs'
+} from '../../main/helpers.js'
+import * as Minio from '../../main/minio.js'
 
 const Package = { version: 'development' }
 
