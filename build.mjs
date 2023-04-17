@@ -49,14 +49,11 @@ const outMap = { cjs: 'main', esm: 'esm' }
 
 async function buildFiles({ files, module, outDir }) {
   console.log(`building for ${module}`)
-  if (module === 'cjs') {
-    execSync(`npx tsc --outDir ./dist/${outMap[module]}/`)
-  }
   const opt = options(module)
   for (const file of files) {
     if (file.path.endsWith('.d.ts')) {
       if (module === 'cjs') {
-        fs.copyFileSync(file.path, path.join(outDir, path.relative('src/main/', file.path)))
+        fs.copyFileSync(file.path, path.join(outDir, path.relative('src/', file.path)))
       }
       continue
     }
@@ -67,7 +64,7 @@ async function buildFiles({ files, module, outDir }) {
         ...opt,
       })
 
-      const outPath = path.join(outDir, path.relative('src/main/', file.path)).replace(/\.[tj]s/g, extMap[module])
+      const outPath = path.join(outDir, path.relative('src/', file.path)).replace(/\.[tj]s/g, extMap[module])
       await mkdir(path.dirname(outPath))
       fs.writeFileSync(outPath, result.code)
     } catch (e) {
@@ -80,7 +77,10 @@ async function buildFiles({ files, module, outDir }) {
 async function main() {
   await fsp.rm('dist', { recursive: true, force: true })
 
-  const entries = fsWalk.walkSync('src/main/')
+  console.log('tsc')
+  execSync(`npx tsc --outDir ./dist/main/`, { stdio: 'inherit' })
+
+  const entries = fsWalk.walkSync('src/')
   await buildFiles({
     files: entries,
     module: 'cjs',

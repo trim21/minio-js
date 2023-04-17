@@ -44,7 +44,7 @@ module.exports = {
   overrides: [
     {
       files: './src/**/*',
-      excludedFiles: ['src/test/*.*'],
+      excludedFiles: ['tests/*.*'],
       rules: {
         'no-console': ['error'],
         'prefer-const': 0,
@@ -90,7 +90,6 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': ['warn'],
 
         '@typescript-eslint/prefer-optional-chain': 0, // ["warn"],
-        'no-empty-function': 0,
         '@typescript-eslint/no-empty-function': 0, // ["warn"],
         '@typescript-eslint/no-var-requires': 0,
         '@typescript-eslint/no-this-alias': 0,
@@ -104,10 +103,17 @@ module.exports = {
       },
     },
     {
-      files: './src/**/*',
+      files: ['./src/**/*', './tests/**/*'],
       rules: {
         'import/no-commonjs': 'error',
         'import/no-amd': 'error',
+      },
+    },
+    {
+      files: ['./tests/**/*'],
+      rules: {
+        'no-empty-function': 0,
+        '@typescript-eslint/no-empty-function': 0,
       },
     },
   ],

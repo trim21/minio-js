@@ -29,8 +29,8 @@ import {
   makeDateLong,
   makeDateShort,
   partsRequired,
-} from '../../main/helpers.js'
-import * as Minio from '../../main/minio.js'
+} from '../../src/helpers.js'
+import * as Minio from '../../src/minio.js'
 
 const Package = { version: 'development' }
 

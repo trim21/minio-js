@@ -16,10 +16,14 @@
  * limitations under the License.
  */
 
+/// <reference lib="ES2022.Error" />
+
 class ExtendableError extends Error {
-  // es6 doesn't support new error cause
-  // and nodejs runtime will add stack automatically, so no need to add it.
+  // 'es6-error' doesn't support new error cause
+  // and js runtime will add stack automatically, so no need to add it.
   constructor(message?: string, opt?: ErrorOptions) {
+    // error Option {cause?: unknown} is a 'nice to have',
+    // don't use it internally
     super(message, opt)
     // set error name, otherwise it's always 'Error'
     this.name = this.constructor.name

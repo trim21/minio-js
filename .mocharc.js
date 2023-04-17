@@ -1,7 +1,7 @@
 module.exports = {
-  spec: 'src/test/**/*.js',
+  spec: 'tests/**/*.js',
   exit: true,
   reporter: 'spec',
   ui: 'bdd',
-  require: ['dotenv/config', 'source-map-support/register', './src/test/babel-register.js'],
+  require: ['dotenv/config', 'source-map-support/register', './babel-register.js'],
 }
