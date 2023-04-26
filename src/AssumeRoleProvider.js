@@ -2,12 +2,12 @@ import * as Http from 'node:http'
 import * as Https from 'node:https'
 import { URL, URLSearchParams } from 'node:url'
 
-import { CredentialProvider } from './CredentialProvider.js'
-import { Credentials } from './Credentials.js'
+import CredentialProvider from './CredentialProvider.js'
+import Credentials from './Credentials.js'
 import { makeDateLong, parseXml, toSha256 } from './helpers.js'
 import { signV4ByServiceName } from './signing.js'
 
-export class AssumeRoleProvider extends CredentialProvider {
+class AssumeRoleProvider extends CredentialProvider {
   constructor({
     stsEndpoint,
     accessKey,
@@ -22,6 +22,7 @@ export class AssumeRoleProvider extends CredentialProvider {
     token,
     webIdentityToken,
     action = 'AssumeRole',
+    transportAgent = undefined,
   }) {
     super({})
 
@@ -38,6 +39,10 @@ export class AssumeRoleProvider extends CredentialProvider {
     this.webIdentityToken = webIdentityToken
     this.action = action
     this.sessionToken = sessionToken
+    // By default, nodejs uses a global agent if the 'agent' property
+    // is set to undefined. Otherwise, it's okay to assume the users
+    // know what they're doing if they specify a custom transport agent.
+    this.transportAgent = transportAgent
 
     /**
      * Internal Tracking variables
@@ -108,6 +113,7 @@ export class AssumeRoleProvider extends CredentialProvider {
         'x-amz-date': makeDateLong(date),
         'x-amz-content-sha256': contentSha256,
       },
+      agent: this.transportAgent,
     }
 
     const authorization = signV4ByServiceName(requestOptions, this.accessKey, this.secretKey, this.region, date, 'sts')
@@ -209,5 +215,4 @@ export class AssumeRoleProvider extends CredentialProvider {
   }
 }
 
-// deprecated, keep for backward compatibility.
 export default AssumeRoleProvider
