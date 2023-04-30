@@ -16,6 +16,9 @@
 
 /// <reference lib="ES2022.Error" />
 
+/**
+ * @internal
+ */
 export class ExtendableError extends Error {
   // 'es6-error' doesn't support new error cause
   // and js runtime will add stack automatically, so no need to add it.
