@@ -1,6 +1,6 @@
-import Credentials from './Credentials'
+import { Credentials } from './Credentials.js'
 
-class CredentialProvider {
+export class CredentialProvider {
   constructor({ accessKey, secretKey, sessionToken }) {
     this.credentials = new Credentials({
       accessKey,
@@ -46,4 +46,5 @@ class CredentialProvider {
   }
 }
 
+// deprecated, keep for backward compatibility.
 export default CredentialProvider

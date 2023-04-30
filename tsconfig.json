@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "moduleResolution": "Node",
+    "module": "ESNext",
+    "strict": false,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "allowImportingTsExtensions": true,
+    "declaration": true,
+    "declarationMap": false,
+    "emitDeclarationOnly": true,
+    "sourceMap": true,
+    "pretty": true,
+    "outDir": "./dist/main/",
+    "sourceRoot": "./src/"
+  }
+}

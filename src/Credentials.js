@@ -1,4 +1,4 @@
-class Credentials {
+export class Credentials {
   constructor({ accessKey, secretKey, sessionToken }) {
     this.accessKey = accessKey
     this.secretKey = secretKey
@@ -33,4 +33,5 @@ class Credentials {
   }
 }
 
+// deprecated, keep for backward compatibility.
 export default Credentials

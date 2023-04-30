@@ -1,11 +1,11 @@
-import Http from 'http'
-import Https from 'https'
+import * as Http from 'node:http'
+import * as Https from 'node:https'
+import { URL, URLSearchParams } from 'node:url'
 
-import CredentialProvider from './CredentialProvider'
-import Credentials from './Credentials'
-import { makeDateLong, parseXml, toSha256 } from './helpers'
-import { signV4ByServiceName } from './signing'
-const { URLSearchParams, URL } = require('url')
+import { CredentialProvider } from './CredentialProvider.js'
+import { Credentials } from './Credentials.js'
+import { makeDateLong, parseXml, toSha256 } from './helpers.js'
+import { signV4ByServiceName } from './signing.js'
 
 class AssumeRoleProvider extends CredentialProvider {
   constructor({

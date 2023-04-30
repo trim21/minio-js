@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-import Stream from 'stream'
+import * as Stream from 'node:stream'
 
-import * as errors from './errors.js'
+import * as errors from './errors.ts'
 import { isBoolean, isNumber, isString, isValidBucketName, isValidPrefix, pipesetup, uriEscape } from './helpers.js'
-import * as transformers from './transformers'
+import * as transformers from './transformers.js'
 
-export default class extensions {
+export class extensions {
   constructor(client) {
     this.client = client
   }
@@ -170,3 +170,6 @@ export default class extensions {
     return transformer
   }
 }
+
+// deprecated, keep for backward compatibility.
+export default extensions

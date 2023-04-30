@@ -14,14 +14,15 @@
  * limitations under the License.
  */
 
-import Crypto from 'crypto'
-import * as querystring from 'query-string'
-import { Transform } from 'stream'
+import * as Crypto from 'node:crypto'
+import { Transform } from 'node:stream'
 
-import { getVersionId, sanitizeETag } from './helpers'
+import * as querystring from 'query-string'
+
+import { getVersionId, sanitizeETag } from './helpers.js'
 
 // We extend Transform because Writable does not implement ._flush().
-export default class ObjectUploader extends Transform {
+export class ObjectUploader extends Transform {
   constructor(client, bucketName, objectName, partSize, metaData, callback) {
     super()
     this.emptyStream = true
@@ -281,3 +282,6 @@ export default class ObjectUploader extends Transform {
     })
   }
 }
+
+// deprecated, keep for backward compatibility.
+export default ObjectUploader
