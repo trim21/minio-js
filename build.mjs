@@ -45,7 +45,6 @@ function options(module) {
 }
 
 const extMap = { cjs: '.js', esm: '.mjs' }
-const outMap = { cjs: 'main', esm: 'esm' }
 
 async function buildFiles({ files, module, outDir }) {
   console.log(`building for ${module}`)
