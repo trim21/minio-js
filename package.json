@@ -19,6 +19,24 @@
     "lint-staged": "lint-staged",
     "prepare": "husky install"
   },
+  "exports": {
+    ".": {
+      "types": "./types/minio.d.ts",
+      "require": "./dist/main/minio.js",
+      "default": "./dist/esm/minio.mjs"
+    },
+    "./dist/main/*": {
+      "types": "./dist/main/*",
+      "require": "./dist/main/*",
+      "default": null
+    },
+    "./dist/esm/*": {
+      "types": "./dist/esm/*",
+      "import": "./dist/esm/*",
+      "default": null
+    },
+    "./package.json": "./package.json"
+  },
   "files": [
     "package.json",
     "./dist/",

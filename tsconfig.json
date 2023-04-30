@@ -10,7 +10,7 @@
     "esModuleInterop": true,
     "allowImportingTsExtensions": true,
     "declaration": true,
-    "declarationMap": true,
+    "declarationMap": false,
     "emitDeclarationOnly": true,
     "sourceMap": true,
     "pretty": true,
